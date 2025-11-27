@@ -15,8 +15,12 @@ module plotting
     using FFMPEG
     using Statistics
 
+    using Pkg
+    Pkg.resolve()
+    Pkg.instantiate()
+
     using CSV
-    using DataFrames
+    using DataFrame
 
     import Glob:glob
 

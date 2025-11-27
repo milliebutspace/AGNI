@@ -4,10 +4,11 @@ title = "TRAPPIST-1 b, NO ATM"
 [planet]
     tmp_surf        = 500.0
     instellation    = 5700
-    albedo_b        = 0.34
+    albedo_b        = 0.0
     s0_fact         = 0.7
     zenith_angle    = 67
-    surface_material= "res/surface_albedos/tholeiiticbasalt.dat"
+    surface_material= "greybody"
+    albedo_s        = 0.0
     mass            = 8.21e24
     radius          = 7.11e6
     flux_int        = 0.0
