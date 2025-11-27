@@ -14,6 +14,10 @@ module plotting
     using Printf
     using FFMPEG
     using Statistics
+
+    using CSV
+    using DataFrames
+
     import Glob:glob
 
     import ..atmosphere
@@ -465,6 +469,9 @@ module plotting
 
         # Get planck function values
         @. yp = phys.evaluate_planck(xe, atmos.tmp_surf) * 1000.0
+
+        df = DataFrame(x_values = xe, long_wave = yl, short_wave = ys, total = yt, surface = ye, planck = yp)
+        CSV.write("./out/data.csv", df)
 
         # Make plot
         plt = plot(size=(600,400); plt_default...)
